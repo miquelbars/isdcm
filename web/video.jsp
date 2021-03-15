@@ -1,4 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+if(session.getAttribute("login")== null) //check for existing session
+{
+	response.sendRedirect("login.jsp");
+}
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,8 +23,9 @@
             Formato:<input type="text" name="format" maxlength="5" required/><br/><br/>
 
             <br/><br/>  
-            <input type="submit" value="Subir video"/>  
-
-        </form>  
+            <input type="submit" value="Subir video"/>
+        </form>
+        <br><br>
+        <a href="<%= request.getContextPath() %>/logout.jsp">Logout</a>
     </body>
 </html>

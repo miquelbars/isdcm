@@ -15,7 +15,7 @@ import java.time.LocalTime;
 
 @WebServlet(urlPatterns = {"/register"})
 public class ServletRegistroVid extends HttpServlet {
-    private VideoDAO videoDAO;
+    private final VideoDAO videoDAO;
 
     public ServletRegistroVid() {
         this.videoDAO = new VideoDAO();

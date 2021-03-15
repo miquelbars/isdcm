@@ -17,8 +17,9 @@
             Formato:<input type="text" name="format" maxlength="5" required/><br/><br/>
 
             <br/><br/>  
-            <input type="submit" value="Subir video"/>  
-
+            <input type="submit" value="Subir video"/>
+            <br><br>
+            <a href="/logout">Logout</a>
         </form>  
     </body>
 </html>

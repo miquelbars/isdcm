@@ -16,6 +16,17 @@ public class UsuarioDTO {
     private String email;
     private String username;
     private String password;
+    
+    public UsuarioDTO(){
+    }
+    
+    public UsuarioDTO(String nombre, String apellido, String email, String username, String password) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
 
     public UsuarioDTO(Integer id, String nombre, String apellido, String email, String username, String password) {
         this.id = id;
