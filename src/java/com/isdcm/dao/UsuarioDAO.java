@@ -52,7 +52,6 @@ public class UsuarioDAO {
         pstmt.setString(4, usuario.getUsername());
         //a nice feature would be to encrypt user's password
         pstmt.setString(5, usuario.getPassword());
-        pstmt.executeUpdate();
         boolean rowInserted = pstmt.executeUpdate() > 0;
         ds.getConnection().close();
         return rowInserted;
