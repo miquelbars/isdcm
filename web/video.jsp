@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-if(session.getAttribute("login")== null) //check for existing session
+if(session.getAttribute("user")== null) //check for existing session
 {
 	response.sendRedirect("login.jsp");
 }

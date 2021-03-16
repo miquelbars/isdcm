@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-if(session.getAttribute("login")!=null) //check for existing session
+if(session.getAttribute("user")!=null) //check for existing session
 {
 	response.sendRedirect("video.jsp");
 }
@@ -22,10 +22,10 @@ if(session.getAttribute("login")!=null) //check for existing session
             <h1>Login</h1>
             <form action="login" method="post">
                 <label for="username">Usuario:</label>
-                <input name="username" size="30" />
+                <input name="username" size="30" maxlength="255" required />
                 <br><br>
                 <label for="password">Password:</label>
-                <input type="password" name="password" size="30" />
+                <input type="password" name="password" size="30" maxlength="255" required />
                 <br>${errorMsg}
                 <br><br>           
                 <button type="submit">Login</button>

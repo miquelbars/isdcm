@@ -32,6 +32,7 @@ public class ServletUsuarios extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("Entra a doGet : ");
         HttpSession session = request.getSession(false);
         if (session != null) { 
             RequestDispatcher dispatcher = request.getRequestDispatcher("video.jsp");
@@ -96,7 +97,7 @@ public class ServletUsuarios extends HttpServlet {
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-                destPage = "index.jsp";//TODO : cambiar por vista de videos
+                destPage = "video.jsp";
             } else {
                 request.setAttribute("errorMsg", "Invalid email/password");
             }
