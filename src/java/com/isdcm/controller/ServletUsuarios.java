@@ -135,7 +135,11 @@ public class ServletUsuarios extends HttpServlet {
             String passwordConfirmation = request.getParameter("passwordConfirmation");
             if(!checkPasswordConfirmation(password, passwordConfirmation)){
                 request.setAttribute("errorMsg", "Contraseñas no coinciden");
-            }else{
+            }
+            else if(usuarioDAO.checkUserExists(request.getParameter("username"))){
+                request.setAttribute("errorMsg", "El usuario ya existe");
+            }
+            else{
                 String nombre = request.getParameter("nombre");
                 String apellido = request.getParameter("apellido");
                 String username = request.getParameter("username");
